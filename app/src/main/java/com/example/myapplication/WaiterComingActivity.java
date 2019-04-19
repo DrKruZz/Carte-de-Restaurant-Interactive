@@ -8,6 +8,6 @@ public class WaiterComingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_Waiter_coming);
+        setContentView(R.layout.activity_waiter_coming);
     }
 }

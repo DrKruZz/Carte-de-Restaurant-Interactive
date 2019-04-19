@@ -11,7 +11,7 @@
         <item>Velouté de potimarron et châtaignes</item>
         <item>Oeuf mimosa</item>
         <item>Entrecôte de Bavière Simmental, sauce poivre 300g</item>
-        <item>Bavette d'Aloyau</item>
+        <item>Bavette Aloyau</item>
         <item>Poke bowl</item>
         <item>Pavé de saumon grillé sauce vierge</item>
         <item>Tartare de boeuf Charolais</item>
@@ -22,4 +22,5 @@
         <item>Café ou Thé gourmand</item>
         <item>Tarte citron déstructurée du 23</item>
     </string-array>
+    <string name="Nom">Le 23</string>
 </resources>

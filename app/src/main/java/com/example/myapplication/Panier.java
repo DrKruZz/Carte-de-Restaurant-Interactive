@@ -5,16 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Panier extends AppCompatActivity {
+
+    private ArrayList<String> panier = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_panier);
     }
 
-    public void switch_screen(View Sender){
-        Intent intent = new Intent(MainActivity.this,MenuActivity.class);
+    public void cross(View Sender){
+        panier.clear();
+        Intent intent = new Intent(Panier.this,MenuActivity.class);
         startActivity(intent);
     }
 }
