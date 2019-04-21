@@ -11,6 +11,8 @@
         android:onClick="switch_screen"
         android:background="@drawable/background_app"
         android:text="@string/Nom"
-        android:textSize="32sp"
-        android:textStyle="bold"/>
+        android:textSize="100sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/moonflower"
+        android:textColor="#ffffff"/>
 </LinearLayout>

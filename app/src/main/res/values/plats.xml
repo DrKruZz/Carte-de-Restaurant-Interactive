@@ -3,7 +3,6 @@
     <string name="app_name">ToolbarSearchview</string>
     <string-array name="plats_array">
         <item>Croustillant de gambas au basilic</item>
-        <item>Croustillant de gambas au basilic</item>
         <item>Escargots de Bourgogne x6</item>
         <item>Escargots de Bourgogne x12</item>
         <item>Os à moelle</item>
@@ -23,4 +22,68 @@
         <item>Tarte citron déstructurée du 23</item>
     </string-array>
     <string name="Nom">Le 23</string>
+
+    <string-array name="desc_array">
+        <item>Gambas frites dans une chapelure aromatisée au basilic. Servies chaudes</item>
+        <item>Escargots farcis au beurre persilé. Servis par 6.</item>
+        <item>Escargots farcis au beurre persilé. Servis par 12.</item>
+        <item>Os à moelle grillé à la poêle et à la fleur de sel. Servi chaud.</item>
+        <item>Tranche de fois gras accompagné d\'un condiment aigre-doux composé de figues.
+        Servi avec du pain grillé chaud.</item>
+        <item>Velouté revenu à l\'huile d\'olive avec soupçon de crème frâiche. Servi chaud.</item>
+        <item>Oeuf mimosa revisité à la façon 23. Servi froid.</item>
+        <item>Entrecôte bovine suisse accompagnée d\'une sauce maison au poivre. Servie chaude.</item>
+        <item>Bavette de type bifteck revenue à la poêle. Servie chaude.</item>
+        <item>Spécialité hawaïenne. Salade mixte marinée au soja, miel et sésame. Servie dans un bol.</item>
+        <item>Saumon grillé à la plancha accompagné d\'une sauce maison. Servi chaud.</item>
+        <item>Boeuf cru préparé à l\'oeuf, câpres et échalottes. Servi froid.</item>
+        <item>Salade ornée de tranches de fromage de chèvre au four, avec morceaux de figues et de noix, et recouvert de mieL.</item>
+        <item>Burger de boeuf avec gouda fondu truffé. Sauce ibérique ou guacamole. Servi chaud.</item>
+        <item>Dessert chocolaté gourmand et aérien ou glace de la même préparation.</item>
+        <item>Tiramisu revisité au Nutella.</item>
+        <item>Café ou thé accompagné de bouchées sucrées.</item>
+        <item>Tarte au citron et sa meringue revisités.</item>
+    </string-array>
+
+    <string-array name="prix_array">
+        <item>12</item>
+        <item>5</item>
+        <item>9</item>
+        <item>8.50</item>
+        <item>16.50</item>
+        <item>8</item>
+        <item>6</item>
+        <item>25</item>
+        <item>19</item>
+        <item>15.50</item>
+        <item>16</item>
+        <item>14.5</item>
+        <item>14</item>
+        <item>16.50</item>
+        <item>8.50</item>
+        <item>9</item>
+        <item>11</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="img_array">
+        <item>cr_gambas</item>
+        <item>esc</item>
+        <item>esc</item>
+        <item>os</item>
+        <item>fois_g</item>
+        <item>poti</item>
+        <item>oeuf_m</item>
+        <item>entrecote</item>
+        <item>bavette</item>
+        <item>poke</item>
+        <item>saumon</item>
+        <item>tartare</item>
+        <item>chevre</item>
+        <item>burger</item>
+        <item>moelleux</item>
+        <item>tira</item>
+        <item>gourmand</item>
+        <item>citron</item>
+    </string-array>
 </resources>

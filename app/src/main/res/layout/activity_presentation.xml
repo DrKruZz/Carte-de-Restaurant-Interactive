@@ -3,22 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Presentation"
-    android:background="@drawable/background_app">
+    android:background="@color/mahogany">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_height="50dp"
         android:text="@string/Nom"
         android:gravity="center"
         android:textStyle="bold"
         style="@android:style/TextAppearance.Large"
-        android:background="#FF0921"/>
+        android:background="@color/vivid_amber"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/moonflower"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.5">
+        android:layout_weight="0.05">
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -29,54 +31,110 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"/>
+
+
     </LinearLayout>
     <TextView
         android:id="@+id/nom_plat"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
-        style="@android:style/TextAppearance.Large"/>
+        android:text="test"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
     <ImageView
         android:id="@+id/img_plat"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
+        android:layout_height="10dp"
+        android:layout_weight="0.5"/>
+
+    <TextView
+        android:id="@+id/desc_plat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:fontFamily="@font/roboto_thin"
+        android:text="blablablabalabfjzejhfizffifjzeifziefjzefhiz
+zeufhzehfzifzfjeifhzoeifhizef
+ziejfizjefheiffizefhzeifhef"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/prix_plat"
+        android:text="15€"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_thin"
+        android:textColor="#ffffff"
+        android:layout_weight="0.07"
+        android:textSize="20dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/desc_plat"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:gravity="center"
-            style="@android:style/TextAppearance.Large"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/id_moins_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:onClick="add_panier"
-            android:text="Ajouter au panier"/>
+            android:clickable="true"
+            android:onClick="moinsClicked"
+            app:srcCompat="@drawable/moins"
+            app:backgroundTint="@color/bistre" />
+
+        <TextView
+            android:id="@+id/id_quantite"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/quantite"
+            android:textColor="#ffffff" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/id_plus_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="plusClicked"
+            app:srcCompat="@drawable/plus"
+            app:backgroundTint="@color/bistre"/>
+
+        <Button
+            android:id="@+id/id_add_panier"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:onClick="addPanier"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Ajouter au panier" />
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5">
+        android:layout_weight="0.05">
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="7"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="back"
-            android:background="@drawable/back"
-            android:layout_gravity="start"/>
+
     </LinearLayout>
+
 </LinearLayout>

@@ -7,18 +7,15 @@
     tools:context=".MenuActivity"
     android:background="@drawable/background_app">
     <TextView
-        android:id="@+id/tv"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="50dp"
         android:text="@string/Nom"
+        android:gravity="center"
         android:textStyle="bold"
         style="@android:style/TextAppearance.Large"
-        android:gravity="center"
-        android:backgroundTint="#FF0921"
-        android:background="#FC9">
-
-    </TextView>
+        android:background="@color/vivid_amber"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/moonflower"/>
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"

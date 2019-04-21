@@ -15,12 +15,15 @@
         android:backgroundTint="#FF0921">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:text="@string/Nom"
-            android:textColor="#000"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.Large"
+            android:background="@color/vivid_amber"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/moonflower"/>
     </RelativeLayout>
 
     <RelativeLayout

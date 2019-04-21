@@ -31,7 +31,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         ListView lv = findViewById(R.id.lv_menu);
-        final TextView tv = findViewById(R.id.tv);
+        //final TextView tv = findViewById(R.id.tv);
 
         for (int i = 0; i < menu.length; i++){
             List tmp = new ArrayList<String>();
