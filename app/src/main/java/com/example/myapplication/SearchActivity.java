@@ -43,7 +43,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //Toast.makeText(SearchActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SearchActivity.this,Presentation.class);
-                intent.putExtra("item_pos",i);
+                intent.putExtra("name_item",adapterView.getItemAtPosition(i).toString());
                 startActivity(intent);
             }
         });

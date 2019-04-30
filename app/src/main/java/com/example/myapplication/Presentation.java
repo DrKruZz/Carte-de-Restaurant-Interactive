@@ -26,7 +26,8 @@ public class Presentation extends AppCompatActivity {
 
         Intent i_par = getIntent();
 
-        this.id_item = i_par.getIntExtra("item_pos",-1);
+        //this.id_item = i_par.getIntExtra("item_pos",-1);
+        String n_plat = i_par.getStringExtra("name_item");
 
         Intent i = getIntent();
 
@@ -36,7 +37,8 @@ public class Presentation extends AppCompatActivity {
         TextView prix = findViewById(R.id.prix_plat);
 
 
-        name.setText(getName(context));
+        name.setText(n_plat);
+        this.id_item = getPos(context,n_plat);
         Field f = null;
         try {
             f = R.drawable.class.getDeclaredField(getImg(context));
@@ -51,9 +53,13 @@ public class Presentation extends AppCompatActivity {
         prix.setText(getPrix(context)+"€");
     }
 
-    public String getName(Context c) {
-        String[] ar = c.getResources().getStringArray(R.array.plats_array);
-        return ar[this.id_item];
+    public int getPos(Context c, String S) {
+        String [] ar = c.getResources().getStringArray(R.array.plats_array);
+        for (int i = 0 ; i < ar.length ; i++) {
+            if (ar[i].equals(S))
+                return i;
+        }
+        return -1;
     }
 
     public String getDesc(Context c) {
