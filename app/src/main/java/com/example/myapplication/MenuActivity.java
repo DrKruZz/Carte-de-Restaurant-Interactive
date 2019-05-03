@@ -27,6 +27,14 @@ public class MenuActivity extends AppCompatActivity {
 
         ListView lv = findViewById(R.id.lv_menu);
 
+        Intent intent = getIntent();
+
+        panier = (ArrayList<List<String>>)intent.getSerializableExtra("panier");
+
+        if(panier == null){
+            panier = new ArrayList<>();
+        }
+
         String [] noms_plat = c.getResources().getStringArray(R.array.plats_array);
         String [] prix_plat = c.getResources().getStringArray(R.array.prix_array);
 
@@ -46,6 +54,7 @@ public class MenuActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MenuActivity.this,Presentation.class);
                 intent.putExtra("name_item",selectedItem.get(0));
+                intent.putExtra("panier",panier);
                 startActivity(intent);
             }
         });
@@ -64,6 +73,7 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void search(View Sender){
         Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
+        intent.putExtra("panier",panier);
         startActivity(intent);
     }
     public void help(View Sender){
@@ -73,17 +83,6 @@ public class MenuActivity extends AppCompatActivity {
 
     public void panier(View Sender){
         Context c = this.getApplicationContext();
-        String [] noms_plat = c.getResources().getStringArray(R.array.plats_array);
-        String [] prix_plat = c.getResources().getStringArray(R.array.prix_array);
-
-        for(int i = 0; i < 3; i++) {
-            List tmp = new ArrayList<String>();
-            tmp.add(noms_plat[i]);
-            tmp.add("1");
-            tmp.add(prix_plat[i]);
-            panier.add(tmp);
-        }
-
         Intent intent = new Intent(MenuActivity.this,Panier.class);
         intent.putExtra("panier",panier);
         startActivity(intent);

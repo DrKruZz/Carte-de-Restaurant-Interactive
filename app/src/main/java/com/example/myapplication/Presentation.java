@@ -11,12 +11,17 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class Presentation extends AppCompatActivity {
 
+    private ArrayList<List<String>> panier;
     int id_item;
     Context context;
-
+    private String n_plat;
+    private int nb = 1;
+    private String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,8 @@ public class Presentation extends AppCompatActivity {
 
         Intent i_par = getIntent();
 
-        String n_plat = i_par.getStringExtra("name_item");
+        this.n_plat = i_par.getStringExtra("name_item");
+        this.panier = (ArrayList<List<String>>)i_par.getSerializableExtra("panier");
 
         TextView name = findViewById(R.id.nom_plat);
         ImageView img = findViewById(R.id.img_plat);
@@ -47,6 +53,7 @@ public class Presentation extends AppCompatActivity {
         }
 
         desc.setText(getDesc(context));
+        price = getPrix(context);
         prix.setText(getPrix(context)+"€");
     }
 
@@ -80,10 +87,34 @@ public class Presentation extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public int ind_panier(){
+        Iterator i = panier.iterator();
+        List<String> p;
+        while(i.hasNext()){
+            p = (List<String>) i.next();
+            if (p.get(0).equals(n_plat)){
+                return panier.indexOf(p);
+            }
+        }
+        return -1;
+    }
+
     public void add_panier(View Sender){
-        //Intent intent = new Intent(Presentation.this,popup_add_panier.class);
-        //intent.putExtra("panier",selectedItem);
-        //startActivity(intent);
+        int ind = ind_panier();
+        if(ind >= 0) {
+            panier.get(ind).set(1, Integer.toString(Integer.parseInt(panier.get(ind).get(1)) + nb));
+        }else{
+            List<String> tmp_l = new ArrayList<>();
+            tmp_l.add(n_plat);
+            tmp_l.add(Integer.toString(nb));
+            tmp_l.add(price);
+            panier.add(tmp_l);
+        }
+
+        Intent intent = new Intent(Presentation.this,PopUpActivity.class);
+        intent.putExtra("name",n_plat);
+        intent.putExtra("panier",panier);
+        startActivity(intent);
     }
 
     public void moinsClicked(View view) {
@@ -93,8 +124,9 @@ public class Presentation extends AppCompatActivity {
             tmp = Integer.parseInt(q.getText().toString());
         } catch (Exception e ) {}
         tmp--;
-        if( tmp < 0)
+        if( tmp < 1)
             tmp = 0;
+        this.nb = tmp;
         q.setText(""+tmp+"");
     }
 
@@ -105,6 +137,7 @@ public class Presentation extends AppCompatActivity {
             tmp = Integer.parseInt(q.getText().toString());
         } catch (Exception e ) {}
         tmp++;
+        this.nb = tmp;
         q.setText(""+tmp+"");
     }
 

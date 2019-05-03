@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,26 +17,36 @@ import java.util.List;
 
 public class Panier extends AppCompatActivity {
 
-    private ArrayList<String> panier = new ArrayList<>();
+    private ArrayList<List<String>>  panier;
+    private ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panier);
 
-        ListView lv = findViewById(R.id.lv_panier);
+       this.lv = findViewById(R.id.lv_panier);
 
         Intent i = getIntent();
 
-        ArrayList<List<String>> panier = (ArrayList<List<String>>)i.getSerializableExtra("panier");
+        this.panier = (ArrayList<List<String>>)i.getSerializableExtra("panier");
 
         MyArrayAdapter arrayAdapter = new MyArrayAdapter(this,android.R.layout.activity_list_item,panier);
         lv.setAdapter(arrayAdapter);
+        lv.getChildAt(lv.getFirstVisiblePosition());
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(Panier.this,MenuActivity.class);
+        intent.putExtra("panier",panier);
+        startActivity(intent);
     }
 
     public void cross(View Sender){
         panier.clear();
         Intent intent = new Intent(Panier.this,MenuActivity.class);
+        intent.putExtra("panier",panier);
         startActivity(intent);
     }
 
@@ -60,39 +69,57 @@ public class Panier extends AppCompatActivity {
             TextView prix =rowView.findViewById(R.id.prix_panier);
 
             final List<String> tmp = getItem(position);
+            final int row_position = position;
+
             moins.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
-                    TextView q = (TextView) findViewById(R.id.count_panier);
+
+                    View v = lv.getChildAt(row_position - lv.getFirstVisiblePosition());
+                    TextView nb = (TextView) v.findViewById(R.id.count_panier);
+                    TextView p = (TextView) v.findViewById(R.id.prix_panier);
+
                     int val = 0;
                     try {
-                        val = Integer.parseInt(q.getText().toString());
+                        val = Integer.parseInt(tmp.get(1));
                     } catch (Exception e ) {}
                     val--;
-                    if( val < 0)
+                    if( val < 1)
                         val = 0;
-                    q.setText(""+val+"");
+                    nb.setText(""+val+"");
+                    int tot = val * Integer.parseInt(tmp.get(2));
+                    p.setText(tot+"€");
                     tmp.set(1,""+val+"");
+                    notifyDataSetChanged();
                 }
             });
 
             plus.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
-                    TextView q = (TextView) findViewById(R.id.count_panier);
+
+                    View v = lv.getChildAt(row_position - lv.getFirstVisiblePosition());
+                    TextView nb = (TextView) v.findViewById(R.id.count_panier);
+                    TextView p = (TextView) v.findViewById(R.id.prix_panier);
+
+
                     int val = 0;
                     try {
-                        val = Integer.parseInt(q.getText().toString());
+                        val = Integer.parseInt(tmp.get(1));
                     } catch (Exception e ) {}
                     val++;
-                    q.setText(""+val+"");
+                    nb.setText(""+val+"");
+                    int tot = val * Integer.parseInt(tmp.get(2));
+                    p.setText(tot+"€");
                     tmp.set(1,""+val+"");
+                    notifyDataSetChanged();
                 }
             });
 
             name.setText(tmp.get(0));
             count.setText(tmp.get(1));
-            prix.setText(tmp.get(2)+"€");
+            int tot = Integer.parseInt(tmp.get(1)) * Integer.parseInt(tmp.get(2));
+            prix.setText(tot+"€");
 
             if(convertView != null)
                 rowView = convertView;

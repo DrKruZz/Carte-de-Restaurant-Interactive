@@ -120,7 +120,7 @@ ziejfizjefheiffizefhzeifhef"
             android:layout_weight="1"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:onClick="addPanier"
+            android:onClick="add_panier"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Ajouter au panier" />
