@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,11 +16,6 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
 
-   /* private String[] menu = new String[]{"Frite","Coca"};
-    private Integer[] all_img = new Integer[]{R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
-    private String[] all_prix = new String[]{"19","37"};
-    private String[] descripion = new String[]{"Petit morceau allongé de pomme de terre frite.",
-            "Boisson gazeuse à base de coca et de cola."};*/
     private List<List<String>> list = new ArrayList<>();
     private ArrayList<List<String>> panier = new ArrayList<>();
 
@@ -32,10 +26,9 @@ public class MenuActivity extends AppCompatActivity {
         Context c = this.getApplicationContext();
 
         ListView lv = findViewById(R.id.lv_menu);
-        //final TextView tv = findViewById(R.id.tv);
 
         String [] noms_plat = c.getResources().getStringArray(R.array.plats_array);
-        String [] prix_plat = c.getResources().getStringArray(R.array.plats_array);
+        String [] prix_plat = c.getResources().getStringArray(R.array.prix_array);
 
         for (int i = 0; i < noms_plat.length; i++){
             List tmp = new ArrayList<String>();
@@ -44,11 +37,7 @@ public class MenuActivity extends AppCompatActivity {
             list.add(tmp);
         }
 
-
-
-
         MyArrayAdapter arrayAdapter = new MyArrayAdapter(this,android.R.layout.activity_list_item,list);
-        //ArrayAdapter arrayAdapter = new ArrayAdapter(MenuActivity.this, android.R.layout.activity_list_item,list);
         lv.setAdapter(arrayAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -56,8 +45,7 @@ public class MenuActivity extends AppCompatActivity {
                 ArrayList<String> selectedItem = (ArrayList<String>) parent.getItemAtPosition(position);
 
                 Intent intent = new Intent(MenuActivity.this,Presentation.class);
-                intent.putExtra("panier",panier);
-                intent.putExtra("plat",selectedItem);
+                intent.putExtra("name_item",selectedItem.get(0));
                 startActivity(intent);
             }
         });
@@ -84,6 +72,18 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void panier(View Sender){
+        Context c = this.getApplicationContext();
+        String [] noms_plat = c.getResources().getStringArray(R.array.plats_array);
+        String [] prix_plat = c.getResources().getStringArray(R.array.prix_array);
+
+        for(int i = 0; i < 3; i++) {
+            List tmp = new ArrayList<String>();
+            tmp.add(noms_plat[i]);
+            tmp.add("1");
+            tmp.add(prix_plat[i]);
+            panier.add(tmp);
+        }
+
         Intent intent = new Intent(MenuActivity.this,Panier.class);
         intent.putExtra("panier",panier);
         startActivity(intent);
@@ -101,17 +101,12 @@ public class MenuActivity extends AppCompatActivity {
             View rowView = inflater.inflate(R.layout.row_custom_list_view_menu, parent, false);
 
             TextView name = rowView.findViewById(R.id.name);
-            ImageView img= rowView.findViewById(R.id.img);
             TextView prix =rowView.findViewById(R.id.prix);
 
             List<String> tmp = getItem(position);
             name.setText(tmp.get(0));
-            //img.setImageResource(Integer.parseInt(tmp.get(1)));
-            prix.setText(tmp.get(1));
+            prix.setText(tmp.get(1)+"€");
 
-           /*if(convertView == null )
-                img.setImageResource(Integer.parseInt(tmp.get(1)));
-            else*/
            if(convertView != null)
                 rowView = convertView;
 

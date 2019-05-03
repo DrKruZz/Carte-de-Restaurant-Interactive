@@ -26,10 +26,7 @@ public class Presentation extends AppCompatActivity {
 
         Intent i_par = getIntent();
 
-        //this.id_item = i_par.getIntExtra("item_pos",-1);
         String n_plat = i_par.getStringExtra("name_item");
-
-        Intent i = getIntent();
 
         TextView name = findViewById(R.id.nom_plat);
         ImageView img = findViewById(R.id.img_plat);
