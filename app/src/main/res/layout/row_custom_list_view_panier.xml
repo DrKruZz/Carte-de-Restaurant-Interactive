@@ -45,4 +45,11 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@android:color/background_light"/>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/supp_plat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/cross"
+            android:backgroundTint="@color/bistre"/>
 </LinearLayout>

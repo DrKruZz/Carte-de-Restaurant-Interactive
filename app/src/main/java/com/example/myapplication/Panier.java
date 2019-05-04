@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -64,14 +65,16 @@ public class Panier extends AppCompatActivity {
 
             FloatingActionButton moins = rowView.findViewById(R.id.moins);
             FloatingActionButton plus = rowView.findViewById(R.id.plus);
+            FloatingActionButton supp_plat = (FloatingActionButton) rowView.findViewById(R.id.supp_plat);
             TextView name = rowView.findViewById(R.id.name_panier);
             TextView count= rowView.findViewById(R.id.count_panier);
             TextView prix =rowView.findViewById(R.id.prix_panier);
+            TextView total = findViewById(R.id.total);
 
             final List<String> tmp = getItem(position);
             final int row_position = position;
 
-            moins.setOnClickListener(new View.OnClickListener(){
+            moins.setOnClickListener(new FloatingActionButton.OnClickListener(){
                 @Override
                 public void onClick(View view) {
 
@@ -94,7 +97,8 @@ public class Panier extends AppCompatActivity {
                 }
             });
 
-            plus.setOnClickListener(new View.OnClickListener(){
+            plus.setOnClickListener(new FloatingActionButton.OnClickListener(){
+
                 @Override
                 public void onClick(View view) {
 
@@ -116,10 +120,29 @@ public class Panier extends AppCompatActivity {
                 }
             });
 
+            supp_plat.setOnClickListener(new FloatingActionButton.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    panier.remove(tmp);
+                    notifyDataSetChanged();
+                    System.out.println("__________________");
+                    System.out.println(panier);
+                    System.out.println("__________________");
+                }
+            });
             name.setText(tmp.get(0));
             count.setText(tmp.get(1));
-            int tot = Integer.parseInt(tmp.get(1)) * Integer.parseInt(tmp.get(2));
+            float tot = Float.parseFloat(tmp.get(1)) * Float.parseFloat(tmp.get(2));
             prix.setText(tot+"€");
+
+            tot = 0;
+
+            for(List<String> l : panier){
+                tot += Float.parseFloat(l.get(1)) * Float.parseFloat(l.get(2));
+            }
+
+            total.setText("Total : " + tot + "€");
 
             if(convertView != null)
                 rowView = convertView;
