@@ -17,6 +17,8 @@
         <activity android:name=".CallWaiter" />
         <activity android:name=".WaiterComingActivity" />
         <activity android:name=".SearchActivity" />
+        <activity android:name=".FiltreActivity"/>
+        <activity android:name=".FiltreResultActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

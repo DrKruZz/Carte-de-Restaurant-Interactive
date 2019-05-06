@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/giants_club"
+    android:orientation="vertical">
+
+    <TextView
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/vivid_amber"
+        android:fontFamily="@font/moonflower"
+        android:gravity="center"
+        android:text="@string/Nom"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:paddingTop="20dp">
+
+        <CheckBox
+            android:id="@+id/entree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="entrée"
+            android:textSize="20sp"
+            android:onClick="entree"/>
+
+        <CheckBox
+            android:id="@+id/plat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="plat"
+            android:textSize="20sp"
+            android:onClick="plat"/>
+
+        <CheckBox
+            android:id="@+id/dessert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="dessert"
+            android:textSize="20sp"
+            android:onClick="dessert"/>
+
+        <CheckBox
+            android:id="@+id/vege"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="végétarien"
+            android:textSize="20sp"
+            android:onClick="vege"/>
+
+        <CheckBox
+            android:id="@+id/carni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="carnivore"
+            android:textSize="20sp"
+            android:onClick="carni"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="68dp"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="résultat"
+        android:layout_margin="25dp"
+        android:backgroundTint="@color/mahogany"
+        android:onClick="send"/>
+
+
+</LinearLayout>
