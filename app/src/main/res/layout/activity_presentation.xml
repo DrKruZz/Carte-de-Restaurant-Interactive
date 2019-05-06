@@ -20,7 +20,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.05">
+        android:layout_weight="0.09">
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -89,8 +89,9 @@ ziejfizjefheiffizefhzeifhef"
             android:layout_weight="1"
             android:clickable="true"
             android:onClick="moinsClicked"
-            app:srcCompat="@drawable/moins"
-            app:backgroundTint="@color/bistre" />
+            android:src="@drawable/moins"
+            android:backgroundTint="@color/bistre"
+            />
 
         <TextView
             android:id="@+id/id_quantite"
@@ -108,8 +109,8 @@ ziejfizjefheiffizefhzeifhef"
             android:layout_weight="1"
             android:clickable="true"
             android:onClick="plusClicked"
-            app:srcCompat="@drawable/plus"
-            app:backgroundTint="@color/bistre"/>
+            android:src="@drawable/plus"
+            android:backgroundTint="@color/bistre"/>
 
         <Button
             android:id="@+id/id_add_panier"
@@ -119,7 +120,7 @@ ziejfizjefheiffizefhzeifhef"
             android:layout_weight="1"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:onClick="addPanier"
+            android:onClick="add_panier"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="Ajouter au panier" />

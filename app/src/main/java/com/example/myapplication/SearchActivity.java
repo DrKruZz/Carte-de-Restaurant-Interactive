@@ -15,17 +15,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
     Toolbar mToolbar;
     ArrayAdapter mAdapter;
     ListView mListView;
     TextView mEmptyView;
+    private ArrayList<List<String>> panier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        Intent i = getIntent();
+
+        this.panier = (ArrayList<List<String>>)i.getSerializableExtra("panier");
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -44,6 +51,7 @@ public class SearchActivity extends AppCompatActivity {
                 //Toast.makeText(SearchActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SearchActivity.this,Presentation.class);
                 intent.putExtra("name_item",adapterView.getItemAtPosition(i).toString());
+                intent.putExtra("panier",panier);
                 startActivity(intent);
             }
         });
