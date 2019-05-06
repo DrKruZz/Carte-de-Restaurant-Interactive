@@ -112,8 +112,9 @@ public class Presentation extends AppCompatActivity {
         }
 
         Intent intent = new Intent(Presentation.this,PopUpActivity.class);
-        intent.putExtra("name",n_plat);
+        intent.putExtra("name","Ajout de : \n " + n_plat);
         intent.putExtra("panier",panier);
+        intent.putExtra("menu", true);
         startActivity(intent);
     }
 

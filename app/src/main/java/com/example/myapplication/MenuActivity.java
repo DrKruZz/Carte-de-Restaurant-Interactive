@@ -82,7 +82,6 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void panier(View Sender){
-        Context c = this.getApplicationContext();
         Intent intent = new Intent(MenuActivity.this,Panier.class);
         intent.putExtra("panier",panier);
         startActivity(intent);

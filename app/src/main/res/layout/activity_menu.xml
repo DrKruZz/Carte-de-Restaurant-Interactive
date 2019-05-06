@@ -92,7 +92,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:text="Menu"/>
+        android:text="Menu"
+        android:divider="#ffff"
+        android:dividerHeight="1sp"/>
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
