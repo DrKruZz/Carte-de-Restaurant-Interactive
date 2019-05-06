@@ -29,16 +29,23 @@ public class PopUpActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        String name = i.getStringExtra("name");
+        String text = i.getStringExtra("name");
         this.panier = (ArrayList<List<String>>) i.getSerializableExtra("panier");
 
         TextView tv = (TextView) findViewById(R.id.add_plat);
-        tv.setText("Ajout de : \n" + name);
+        tv.setText(text);
+
+        final boolean menu = i.getExtras().getBoolean("menu");
 
         new Timer().schedule(new TimerTask(){
             public void run() {
-                Intent intent = new Intent(PopUpActivity.this, MenuActivity.class);
-                intent.putExtra("panier",panier);
+                Intent intent;
+                if( menu ){
+                    intent = new Intent(PopUpActivity.this, MenuActivity.class);
+                    intent.putExtra("panier",panier);
+                }else {
+                    intent = new Intent(PopUpActivity.this, MainActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }
