@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WaiterComingActivity">
+    tools:context=".WaiterComingActivity"
+    android:background="@color/giants_club">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -28,21 +29,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="top">
 
         <ImageView
-            android:layout_width="165dp"
-            android:layout_height="244dp"
+            android:layout_width="161dp"
+            android:layout_height="380dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/shyly_smiling_face_emoji" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_height="404dp"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="Un serveur va arriver d'une minute à l'autre"
-            android:textSize="60sp" />
+            android:textSize="60sp"
+            android:enabled="false"
+            android:focusable="false"/>
     </RelativeLayout>
 
 
