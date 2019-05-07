@@ -25,7 +25,8 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="@drawable/home"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="home"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_height="fill_parent"

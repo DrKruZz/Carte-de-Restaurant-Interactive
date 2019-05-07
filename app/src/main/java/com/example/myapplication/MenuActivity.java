@@ -92,6 +92,13 @@ public class MenuActivity extends AppCompatActivity {
         intent.putExtra("panier",panier);
         startActivity(intent);
     }
+
+    public void home(View view) {
+        Intent intent = new Intent(MenuActivity.this, MenuActivity.class);
+        intent.putExtra("panier", panier);
+        startActivity(intent);
+    }
+
     private class MyArrayAdapter extends ArrayAdapter<List<String>>{
 
         public MyArrayAdapter(Context context,int textViewResourceId,List<List<String>> objects){
