@@ -126,7 +126,7 @@ public class Presentation extends AppCompatActivity {
         } catch (Exception e ) {}
         tmp--;
         if( tmp < 1)
-            tmp = 0;
+            tmp = 1;
         this.nb = tmp;
         q.setText(""+tmp+"");
     }

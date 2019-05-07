@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -39,34 +38,33 @@ public class Panier extends AppCompatActivity {
         lv.getChildAt(lv.getFirstVisiblePosition());
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(Panier.this,MenuActivity.class);
-        intent.putExtra("panier",panier);
+    public void home(View Sender){
+        Intent intent = new Intent(Panier.this, MenuActivity.class);
+        intent.putExtra("panier", panier);
         startActivity(intent);
     }
 
     public void cross(View Sender){
-        if(!panier.isEmpty()) {
-            AlertDialog.Builder adb = new AlertDialog.Builder(Panier.this);
-            adb.setTitle("Vider?");
-            adb.setMessage("Voulez-vous vraiment vider votre panier ?");
+        AlertDialog.Builder adb = new AlertDialog.Builder(Panier.this);
+        adb.setTitle("Annulé ?");
+        adb.setMessage("Voulez-vous vraiment annuler votre commande?");
 
-            adb.setNegativeButton("Non", null);
-            adb.setPositiveButton("Oui", new AlertDialog.OnClickListener() {
+        adb.setNegativeButton("Non", null);
+        adb.setPositiveButton("Oui", new AlertDialog.OnClickListener() {
 
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    panier.clear();
-                    Intent intent = new Intent(Panier.this, PopUpActivity.class);
-                    intent.putExtra("name", "Le panier est vidé !");
-                    intent.putExtra("panier", panier);
-                    intent.putExtra("menu", true);
-                    startActivity(intent);
-                }
-            });
-            adb.show();
-        }
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                panier.clear();
+                Intent intent = new Intent(Panier.this, PopUpActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("name", "La commande annulé !");
+                intent.putExtra("panier", panier);
+                intent.putExtra("menu", false);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+        adb.show();
     }
 
     public void validate(View Sender){
@@ -74,7 +72,6 @@ public class Panier extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(Panier.this);
             builder.setTitle("Panier Vide !");
             builder.setMessage("Votre Panier est vide,\nVeuillez choisir au moins un plat !");
-            builder.setPositiveButton("Ok",null);
             AlertDialog dialog = builder.create();
             dialog.show();
         }else{
@@ -87,10 +84,12 @@ public class Panier extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             panier.clear();
                             Intent intent = new Intent(Panier.this, PopUpActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                             intent.putExtra("name", "La commande est passé,\nMerci");
                             intent.putExtra("panier", panier);
                             intent.putExtra("menu", false);
                             startActivity(intent);
+                            overridePendingTransition(0, 0);
                         }
                     });
             builder.setNegativeButton("Non", null);
@@ -135,7 +134,7 @@ public class Panier extends AppCompatActivity {
                     } catch (Exception e ) {}
                     val--;
                     if( val < 1)
-                        val = 0;
+                        val = 1;
                     nb.setText(""+val+"");
                     float tot = val * Float.parseFloat(tmp.get(2));
                     p.setText(tot+"€");
@@ -176,6 +175,7 @@ public class Panier extends AppCompatActivity {
                     Intent intent = new Intent(Panier.this,Panier.class);
                     intent.putExtra("panier",panier);
                     startActivity(intent);
+                    overridePendingTransition(0, 0);
                 }
             });
             name.setText(tmp.get(0));

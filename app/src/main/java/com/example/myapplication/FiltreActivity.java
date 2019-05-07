@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FiltreActivity extends AppCompatActivity {
 
     private boolean entree;
@@ -12,6 +15,7 @@ public class FiltreActivity extends AppCompatActivity {
     private boolean dessert;
     private boolean vege;
     private boolean carni;
+    private ArrayList<List<String>> panier = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,8 @@ public class FiltreActivity extends AppCompatActivity {
         this.dessert = false;
         this.vege = false;
         this.carni = false;
+        Intent intent = getIntent();
+        panier = (ArrayList<List<String>>)intent.getSerializableExtra("panier");
     }
 
     public void entree(View Sender) {
@@ -56,6 +62,9 @@ public class FiltreActivity extends AppCompatActivity {
         intent.putExtra("dessert",dessert);
         intent.putExtra("vege",vege);
         intent.putExtra("carni",carni);
+
+        intent.putExtra("panier",panier);
+
         startActivity(intent);
     }
 
