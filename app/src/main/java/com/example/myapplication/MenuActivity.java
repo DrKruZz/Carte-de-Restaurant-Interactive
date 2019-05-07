@@ -86,6 +86,12 @@ public class MenuActivity extends AppCompatActivity {
         intent.putExtra("panier",panier);
         startActivity(intent);
     }
+
+    public void filtre(View Sender) {
+        Intent intent = new Intent(MenuActivity.this,FiltreActivity.class);
+        intent.putExtra("panier",panier);
+        startActivity(intent);
+    }
     private class MyArrayAdapter extends ArrayAdapter<List<String>>{
 
         public MyArrayAdapter(Context context,int textViewResourceId,List<List<String>> objects){
