@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_app"
+    android:background="@color/thistle"
     tools:context=".Help">
 
     <RelativeLayout
@@ -16,15 +16,15 @@
         android:backgroundTint="#FF0921">
 
         <TextView
+            style="@android:style/TextAppearance.Large"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="@string/Nom"
+            android:background="@color/smoky_black"
+            android:fontFamily="@font/roboto_thin"
             android:gravity="center"
-            android:textStyle="bold"
-            style="@android:style/TextAppearance.Large"
-            android:background="@color/vivid_amber"
+            android:text="@string/Nom"
             android:textColor="#ffffff"
-            android:fontFamily="@font/moonflower"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <LinearLayout
@@ -41,7 +41,8 @@
             android:drawableStart="@android:drawable/ic_menu_revert"
             android:padding="16dp"
             android:text="Retour à l'ecran d'accueil"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:backgroundTint="@color/lavender_gray"/>
 
 
     </LinearLayout>

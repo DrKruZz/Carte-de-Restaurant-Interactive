@@ -6,17 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Presentation"
-    android:background="@color/giants_club">
+    android:background="@color/lavender_gray">
     <TextView
+        style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="@string/Nom"
+        android:background="@color/smoky_black"
+        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
-        android:textStyle="bold"
-        style="@android:style/TextAppearance.Large"
-        android:background="@color/vivid_amber"
+        android:text="@string/Nom"
         android:textColor="#ffffff"
-        android:fontFamily="@font/moonflower"/>
+        android:textStyle="bold" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -90,7 +90,7 @@ ziejfizjefheiffizefhzeifhef"
             android:clickable="true"
             android:onClick="moinsClicked"
             android:src="@drawable/moins"
-            android:backgroundTint="@color/bistre"
+            android:backgroundTint="@color/deep_ruby"
             />
 
         <TextView
@@ -110,7 +110,11 @@ ziejfizjefheiffizefhzeifhef"
             android:clickable="true"
             android:onClick="plusClicked"
             android:src="@drawable/plus"
-            android:backgroundTint="@color/bistre"/>
+            android:backgroundTint="@color/deep_ruby"/>
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="match_parent"/>
 
         <Button
             android:id="@+id/id_add_panier"
@@ -123,7 +127,8 @@ ziejfizjefheiffizefhzeifhef"
             android:onClick="add_panier"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="Ajouter au panier" />
+            android:text="Ajouter au panier"
+            android:backgroundTint="@color/thistle"/>
 
 
     </LinearLayout>

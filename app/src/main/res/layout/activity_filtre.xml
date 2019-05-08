@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/giants_club"
+    android:background="@color/lavender_gray"
     android:orientation="vertical">
 
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/vivid_amber"
-        android:fontFamily="@font/moonflower"
+        android:background="@color/smoky_black"
+        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
@@ -26,6 +26,10 @@
         android:layout_margin="10dp"
         android:paddingTop="20dp">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
         <CheckBox
             android:id="@+id/entree"
             android:layout_width="match_parent"
@@ -34,7 +38,12 @@
             android:gravity="center"
             android:text="entrée"
             android:textSize="20sp"
-            android:onClick="entree"/>
+            android:onClick="entree"
+            android:fontFamily="@font/roboto_thin"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
 
         <CheckBox
             android:id="@+id/plat"
@@ -44,7 +53,11 @@
             android:gravity="center"
             android:text="plat"
             android:textSize="20sp"
-            android:onClick="plat"/>
+            android:onClick="plat"
+            android:fontFamily="@font/roboto_thin"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
 
         <CheckBox
             android:id="@+id/dessert"
@@ -54,7 +67,11 @@
             android:gravity="center"
             android:text="dessert"
             android:textSize="20sp"
-            android:onClick="dessert"/>
+            android:onClick="dessert"
+            android:fontFamily="@font/roboto_thin"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
 
         <CheckBox
             android:id="@+id/vege"
@@ -64,7 +81,11 @@
             android:gravity="center"
             android:text="végétarien"
             android:textSize="20sp"
-            android:onClick="vege"/>
+            android:onClick="vege"
+            android:fontFamily="@font/roboto_thin"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
 
         <CheckBox
             android:id="@+id/carni"
@@ -74,22 +95,24 @@
             android:gravity="center"
             android:text="carnivore"
             android:textSize="20sp"
-            android:onClick="carni"/>
+            android:onClick="carni"
+            android:fontFamily="@font/roboto_thin"/>
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="68dp"/>
+        android:layout_height="506dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="résultat"
         android:layout_margin="25dp"
-        android:backgroundTint="@color/mahogany"
-        android:onClick="send"/>
+        android:backgroundTint="@color/thistle"
+        android:onClick="send"
+        android:text="résultat"
+        android:textColor="@color/deep_ruby" />
 
 
 </LinearLayout>

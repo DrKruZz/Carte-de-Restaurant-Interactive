@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WaiterComingActivity"
-    android:background="@color/giants_club">
+    tools:context=".WaiterComingActivity">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -16,15 +15,16 @@
         android:backgroundTint="#FF0921">
 
         <TextView
+            style="@android:style/TextAppearance.Large"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="@string/Nom"
+            android:background="@color/smoky_black"
+            android:fontFamily="@font/roboto_thin"
             android:gravity="center"
-            android:textStyle="bold"
-            style="@android:style/TextAppearance.Large"
-            android:background="@color/vivid_amber"
+            android:text="@string/Nom"
             android:textColor="#ffffff"
-            android:fontFamily="@font/moonflower"/>
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -50,9 +50,11 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Un serveur va arriver d'une minute à l'autre"
-            android:textSize="60sp"
+            android:textSize="55sp"
             android:enabled="false"
-            android:focusable="false"/>
+            android:focusable="false"
+            android:textColor="@color/deep_ruby"
+            android:fontFamily="@font/roboto_thin"/>
     </RelativeLayout>
 
 

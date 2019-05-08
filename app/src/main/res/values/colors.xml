@@ -4,13 +4,10 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="mahogany">#B23600</color>
-    <color name="dark_scarlet">#6C1314</color>
-    <color name="bistre">#38282A</color>
-    <color name="vivid_amber">#C89B00</color>
-    <color name="giants_club">#B35E47</color>
-    <color name="dark_sea_green">#87B38D</color>
-    <color name="pale_goldenrod">#DBDFAC</color>
-
+    <color name="lilac">#C7ADCC</color>
+    <color name="smoky_black">#16010D</color>
+    <color name="lavender_gray">#CAB6CD</color>
+    <color name="deep_ruby">#734B5E</color>
+    <color name="thistle">#CFBCDF</color>
 
 </resources>

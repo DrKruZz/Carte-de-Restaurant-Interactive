@@ -4,14 +4,29 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.example.myapplication.SearchActivity">
+tools:context="com.example.myapplication.SearchActivity"
+    android:background="@color/lilac">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+    <TextView
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/smoky_black"
+        android:fontFamily="@font/roboto_thin"
+        android:gravity="center"
+        android:text="@string/Nom"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
 <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/dark_sea_green"
+    android:background="@color/lavender_gray"
     android:minHeight="?attr/actionBarSize"
     app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
@@ -29,4 +44,6 @@ tools:context="com.example.myapplication.SearchActivity">
     android:text="No Results"
     android:textSize="20sp"
     android:visibility="gone" />
+
+    </LinearLayout>
 </RelativeLayout>

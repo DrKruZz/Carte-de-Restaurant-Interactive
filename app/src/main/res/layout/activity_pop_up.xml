@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PopUpActivity">
+
     <TextView
         android:id="@+id/add_plat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="TEST"
         android:gravity="center"
-        android:background="@color/mahogany"
+        android:background="@color/deep_ruby"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold"/>

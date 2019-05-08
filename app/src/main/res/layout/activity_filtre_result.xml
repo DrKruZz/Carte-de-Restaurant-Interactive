@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/giants_club"
+    android:background="@color/lavender_gray"
     android:orientation="vertical">
 
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/vivid_amber"
-        android:fontFamily="@font/moonflower"
+        android:background="@color/smoky_black"
+        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
