@@ -33,6 +33,14 @@ public class FiltreActivity extends AppCompatActivity {
         panier = (ArrayList<List<String>>)intent.getSerializableExtra("panier");
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent data = new Intent();
+        data.putExtra("panier",panier);
+        setResult(RESULT_OK,data);
+        finish();
+    }
+
     public void entree(View Sender) {
         this.entree = !(entree);
     }
@@ -68,7 +76,7 @@ public class FiltreActivity extends AppCompatActivity {
 
         intent.putExtra("panier",panier);
 
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

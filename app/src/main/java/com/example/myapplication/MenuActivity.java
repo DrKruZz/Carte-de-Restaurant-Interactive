@@ -30,46 +30,40 @@ public class MenuActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        panier = (ArrayList<List<String>>)intent.getSerializableExtra("panier");
+        panier = (ArrayList<List<String>>) intent.getSerializableExtra("panier");
 
-        if(panier == null){
+        if (panier == null) {
             panier = new ArrayList<>();
         }
 
-        String [] noms_plat = c.getResources().getStringArray(R.array.plats_array);
-        String [] prix_plat = c.getResources().getStringArray(R.array.prix_array);
+        String[] noms_plat = c.getResources().getStringArray(R.array.plats_array);
+        String[] prix_plat = c.getResources().getStringArray(R.array.prix_array);
 
-        for (int i = 0; i < noms_plat.length; i++){
+        for (int i = 0; i < noms_plat.length; i++) {
             List tmp = new ArrayList<String>();
             tmp.add(noms_plat[i]);
             tmp.add(prix_plat[i]);
             list.add(tmp);
         }
 
-        MyArrayAdapter arrayAdapter = new MyArrayAdapter(this,android.R.layout.activity_list_item,list);
+        MyArrayAdapter arrayAdapter = new MyArrayAdapter(this, android.R.layout.activity_list_item, list);
         lv.setAdapter(arrayAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ArrayList<String> selectedItem = (ArrayList<String>) parent.getItemAtPosition(position);
 
-                Intent intent = new Intent(MenuActivity.this,Presentation.class);
-                intent.putExtra("name_item",selectedItem.get(0));
-                intent.putExtra("panier",panier);
-                startActivityForResult(intent,request_Code);
+                Intent intent = new Intent(MenuActivity.this, Presentation.class);
+                intent.putExtra("name_item", selectedItem.get(0));
+                intent.putExtra("panier", panier);
+                startActivityForResult(intent, request_Code);
             }
         });
     }
 
-
-    public void cross(View Sender){
-        panier.clear();
-        Intent intent = new Intent(MenuActivity.this,MenuActivity.class);
-        startActivityForResult(intent,request_Code);
-    }
-
     public void call(View Sender){
         Intent intent = new Intent(MenuActivity.this,CallWaiter.class);
+        intent.putExtra("panier",panier);
         startActivityForResult(intent,request_Code);
     }
     public void search(View Sender){
@@ -79,6 +73,7 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void help(View Sender){
         Intent intent = new Intent(MenuActivity.this,Help.class);
+        intent.putExtra("panier",panier);
         startActivityForResult(intent,request_Code);
     }
 

@@ -20,6 +20,8 @@ public class FiltreResultActivity extends AppCompatActivity {
     ArrayAdapter mAdapter;
     ListView lv;
 
+    private int request_Code = 1;
+
     private List<String> listFiltre = new ArrayList<>();
     private ArrayList<List<String>> panier;
     private boolean entree;
@@ -53,12 +55,9 @@ public class FiltreResultActivity extends AppCompatActivity {
                 Intent intent = new Intent(FiltreResultActivity.this,Presentation.class);
                 intent.putExtra("name_item",adapterView.getItemAtPosition(i).toString());
                 intent.putExtra("panier",panier);
-                startActivity(intent);
+                startActivityForResult(intent,request_Code);
             }
         });
-
-
-
 
     }
 
@@ -126,9 +125,13 @@ public class FiltreResultActivity extends AppCompatActivity {
             listFiltre.retainAll(LCarni);
 
         }
+    }
 
-
-
-
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
     }
 }

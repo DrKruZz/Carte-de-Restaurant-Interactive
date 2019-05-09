@@ -23,6 +23,8 @@ public class Presentation extends AppCompatActivity {
     private int nb = 1;
     private String price;
 
+    private int request_Code = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +86,7 @@ public class Presentation extends AppCompatActivity {
 
     public void back(View Sender){
         Intent intent = new Intent(Presentation.this,MenuActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public int ind_panier(){
@@ -115,7 +117,7 @@ public class Presentation extends AppCompatActivity {
         intent.putExtra("name","Ajout de : \n " + n_plat);
         intent.putExtra("panier",panier);
         intent.putExtra("menu", true);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void moinsClicked(View view) {
@@ -142,5 +144,20 @@ public class Presentation extends AppCompatActivity {
         q.setText(""+tmp+"");
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent data = new Intent();
+        data.putExtra("panier",panier);
+        setResult(RESULT_OK,data);
+        finish();
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
+    }
 
 }

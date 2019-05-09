@@ -25,6 +25,8 @@ public class SearchActivity extends AppCompatActivity {
     TextView mEmptyView;
     private ArrayList<List<String>> panier;
 
+    private int request_Code = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class SearchActivity extends AppCompatActivity {
                 Intent intent = new Intent(SearchActivity.this,Presentation.class);
                 intent.putExtra("name_item",adapterView.getItemAtPosition(i).toString());
                 intent.putExtra("panier",panier);
-                startActivity(intent);
+                startActivityForResult(intent,request_Code);
             }
         });
 
@@ -82,5 +84,21 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent data = new Intent();
+        data.putExtra("panier",panier);
+        setResult(RESULT_OK,data);
+        finish();
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
     }
 }

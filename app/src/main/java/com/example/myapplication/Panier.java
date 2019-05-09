@@ -22,6 +22,8 @@ public class Panier extends AppCompatActivity {
     private ArrayList<List<String>>  panier;
     private ListView lv;
 
+    private int request_Code = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,7 @@ public class Panier extends AppCompatActivity {
     public void home(View Sender){
         Intent intent = new Intent(Panier.this, MenuActivity.class);
         intent.putExtra("panier", panier);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void cross(View Sender){
@@ -68,7 +70,7 @@ public class Panier extends AppCompatActivity {
                 intent.putExtra("name", "La commande annulé !");
                 intent.putExtra("panier", panier);
                 intent.putExtra("menu", false);
-                startActivity(intent);
+                startActivityForResult(intent,request_Code);
                 overridePendingTransition(0, 0);
             }
         });
@@ -96,7 +98,7 @@ public class Panier extends AppCompatActivity {
                             intent.putExtra("name", "La commande est passé,\nMerci");
                             intent.putExtra("panier", panier);
                             intent.putExtra("menu", false);
-                            startActivity(intent);
+                            startActivityForResult(intent,request_Code);
                             overridePendingTransition(0, 0);
                         }
                     });
@@ -143,10 +145,10 @@ public class Panier extends AppCompatActivity {
                     val--;
                     if( val < 1)
                         val = 1;
-                    nb.setText(""+val+"");
+                    nb.setText(""+(int)val+"");
                     float tot = val * Float.parseFloat(tmp.get(2));
                     p.setText(tot+"€");
-                    tmp.set(1,""+val+"");
+                    tmp.set(1,""+(int)val+"");
                     notifyDataSetChanged();
                 }
             });
@@ -166,10 +168,10 @@ public class Panier extends AppCompatActivity {
                         val = Float.parseFloat(tmp.get(1));
                     } catch (Exception e ) {}
                     val++;
-                    nb.setText(""+val+"");
+                    nb.setText(""+(int)val+"");
                     Float tot = val * Float.parseFloat(tmp.get(2));
                     p.setText(tot+"€");
-                    tmp.set(1,""+val+"");
+                    tmp.set(1,""+(int)val+"");
                     notifyDataSetChanged();
                 }
             });
@@ -182,7 +184,7 @@ public class Panier extends AppCompatActivity {
                     //notifyDataSetChanged();
                     Intent intent = new Intent(Panier.this,Panier.class);
                     intent.putExtra("panier",panier);
-                    startActivity(intent);
+                    startActivityForResult(intent,request_Code);
                     overridePendingTransition(0, 0);
                 }
             });
@@ -204,6 +206,13 @@ public class Panier extends AppCompatActivity {
 
             return rowView;
         }
+    }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
     }
 }

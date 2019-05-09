@@ -16,6 +16,8 @@ public class WaiterComingActivity extends AppCompatActivity {
     private List<List<String>> list = new ArrayList<>();
     private ArrayList<List<String>> panier = new ArrayList<>();
 
+    private int request_Code = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,9 +34,25 @@ public class WaiterComingActivity extends AppCompatActivity {
             public void run(){
                 Intent intent = new Intent(WaiterComingActivity.this, MenuActivity.class);
                 intent.putExtra("panier",panier);
-                startActivity(intent);
+                startActivityForResult(intent,request_Code);
                 finish();
             }
         },TIME_OUT);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent data = new Intent();
+        data.putExtra("panier",panier);
+        setResult(RESULT_OK,data);
+        finish();
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
     }
 }
