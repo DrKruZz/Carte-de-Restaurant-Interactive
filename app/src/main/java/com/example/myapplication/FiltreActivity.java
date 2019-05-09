@@ -15,6 +15,9 @@ public class FiltreActivity extends AppCompatActivity {
     private boolean dessert;
     private boolean vege;
     private boolean carni;
+
+    private int request_Code = 1;
+
     private ArrayList<List<String>> panier = new ArrayList<>();
 
     @Override
@@ -68,10 +71,12 @@ public class FiltreActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
-
-
-
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
+    }
 
 }
