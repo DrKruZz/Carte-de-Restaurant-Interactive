@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryDark">@color/smoky_black</item>
-        <item name="colorAccent">@color/deep_ruby</item>
+        <item name="colorAccent">@color/smoky_black</item>
     </style>
 
 </resources>

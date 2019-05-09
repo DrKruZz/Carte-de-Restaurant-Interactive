@@ -46,7 +46,7 @@ public class Panier extends AppCompatActivity {
 
     public void cross(View Sender){
         AlertDialog.Builder adb = new AlertDialog.Builder(Panier.this);
-        adb.setTitle("Annulé ?");
+        adb.setTitle("Annuler ?");
         adb.setMessage("Voulez-vous vraiment annuler votre commande?");
 
         adb.setNegativeButton("Non", null);
@@ -57,7 +57,7 @@ public class Panier extends AppCompatActivity {
                 panier.clear();
                 Intent intent = new Intent(Panier.this, PopUpActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("name", "La commande annulé !");
+                intent.putExtra("name", "La commande est annulée !");
                 intent.putExtra("panier", panier);
                 intent.putExtra("menu", false);
                 startActivity(intent);

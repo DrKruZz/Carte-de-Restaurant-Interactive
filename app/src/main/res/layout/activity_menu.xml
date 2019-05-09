@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MenuActivity"
-    android:background="@color/lavender_gray">
+    android:background="@drawable/ardoise">
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"

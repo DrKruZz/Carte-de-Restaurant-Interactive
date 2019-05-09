@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Presentation"
-    android:background="@color/lavender_gray">
+    android:background="@drawable/ardoise">
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"
@@ -38,11 +38,11 @@
         android:id="@+id/nom_plat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/learningcurve"
         android:gravity="center"
         android:text="test"
         android:textColor="#ffffff"
-        android:textSize="50sp"
+        android:textSize="70sp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"/>
     <ImageView
@@ -56,23 +56,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/learningcurve"
         android:text="blablablabalabfjzejhfizffifjzeifziefjzefhiz
 zeufhzehfzifzfjeifhzoeifhizef
 ziejfizjefheiffizefhzeifhef"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="20dp" />
+        android:textSize="40dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/prix_plat"
         android:text="15€"
         android:textAlignment="center"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/learningcurve"
         android:textColor="#ffffff"
         android:layout_weight="0.07"
-        android:textSize="20dp"/>
+        android:textSize="30dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
