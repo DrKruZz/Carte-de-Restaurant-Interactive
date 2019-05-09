@@ -5,18 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MenuActivity"
-    android:background="@color/lavender_gray"
-    android:fontFamily="@font/learningcurve">
+    android:background="@drawable/ardoise">
+
+
+
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/smoky_black"
-        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+
+        android:fontFamily="@font/learningcurve"/>
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
