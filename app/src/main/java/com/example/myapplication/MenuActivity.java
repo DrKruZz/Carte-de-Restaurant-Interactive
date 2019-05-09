@@ -69,6 +69,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void call(View Sender){
         Intent intent = new Intent(MenuActivity.this,CallWaiter.class);
+        intent.putExtra("panier",panier);
         startActivity(intent);
     }
     public void search(View Sender){
@@ -78,6 +79,7 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void help(View Sender){
         Intent intent = new Intent(MenuActivity.this,Help.class);
+        intent.putExtra("panier",panier);
         startActivity(intent);
     }
 
@@ -98,6 +100,7 @@ public class MenuActivity extends AppCompatActivity {
         intent.putExtra("panier", panier);
         startActivity(intent);
     }
+
 
     private class MyArrayAdapter extends ArrayAdapter<List<String>>{
 
