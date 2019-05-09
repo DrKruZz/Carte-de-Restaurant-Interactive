@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +72,7 @@ public class Panier extends AppCompatActivity {
                 intent.putExtra("panier", panier);
                 intent.putExtra("menu", false);
                 startActivityForResult(intent,request_Code);
+
                 overridePendingTransition(0, 0);
             }
         });

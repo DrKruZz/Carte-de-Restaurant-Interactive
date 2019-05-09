@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,9 @@ public class PopUpActivity extends AppCompatActivity {
         this.panier = (ArrayList<List<String>>) i.getSerializableExtra("panier");
 
         TextView tv = (TextView) findViewById(R.id.add_plat);
-        tv.setText(text);
+        //tv.setText(text);
+        Toast.makeText(PopUpActivity.this, text, Toast.LENGTH_SHORT).show();
+
 
         final boolean menu = i.getExtras().getBoolean("menu");
 
