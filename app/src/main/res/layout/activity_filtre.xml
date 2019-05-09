@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lavender_gray"
+    android:background="@drawable/ardoise"
     android:orientation="vertical">
 
     <TextView
@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/smoky_black"
-        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:fontFamily="@font/learningcurve"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,9 +38,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="entrée"
-            android:textSize="20sp"
             android:onClick="entree"
-            android:fontFamily="@font/roboto_thin"/>
+            android:fontFamily="@font/learningcurve"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:buttonTint="#ffffff"/>
 
         <View
             android:layout_width="match_parent"
@@ -52,9 +55,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="plat"
-            android:textSize="20sp"
             android:onClick="plat"
-            android:fontFamily="@font/roboto_thin"/>
+            android:fontFamily="@font/learningcurve"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:buttonTint="#ffffff"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="15dp"/>
@@ -66,9 +71,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="dessert"
-            android:textSize="20sp"
             android:onClick="dessert"
-            android:fontFamily="@font/roboto_thin"/>
+            android:fontFamily="@font/learningcurve"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:buttonTint="#ffffff"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="15dp"/>
@@ -80,9 +87,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="végétarien"
-            android:textSize="20sp"
             android:onClick="vege"
-            android:fontFamily="@font/roboto_thin"/>
+            android:fontFamily="@font/learningcurve"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:buttonTint="#ffffff"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="15dp"/>
@@ -94,9 +103,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="carnivore"
-            android:textSize="20sp"
             android:onClick="carni"
-            android:fontFamily="@font/roboto_thin"/>
+            android:fontFamily="@font/learningcurve"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:buttonTint="#ffffff"/>
 
     </LinearLayout>
 

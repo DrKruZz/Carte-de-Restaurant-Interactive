@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lavender_gray"
+    android:background="@color/thistle"
     android:orientation="vertical">
 
     <TextView
@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/smoky_black"
-        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:fontFamily="@font/learningcurve"/>
 
     <ListView
         android:id="@+id/list_filtre"

@@ -6,28 +6,28 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context="com.example.myapplication.SearchActivity"
     android:fontFamily="@font/learningcurve"
-    android:background="@color/lilac">
+    android:background="@color/thistle">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-        style="@android:style/TextAppearance.Large"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/smoky_black"
-        android:fontFamily="@font/roboto_thin"
-        android:gravity="center"
-        android:text="@string/Nom"
-        android:textColor="#ffffff"
-        android:textStyle="bold" />
+        <TextView
+            style="@android:style/TextAppearance.Large"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/smoky_black"
+            android:gravity="center"
+            android:text="@string/Nom"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="45dp"
+            android:fontFamily="@font/learningcurve"/>
 
 <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/lavender_gray"
     android:minHeight="?attr/actionBarSize"
     app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
@@ -42,9 +42,10 @@ tools:context="com.example.myapplication.SearchActivity"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
-    android:text="No Results"
-    android:textSize="20sp"
-    android:visibility="gone" />
+    android:text="Malheureusement, ce que vous recherchez n'est pas disponible"
+    android:textSize="30sp"
+    android:visibility="gone"
+    android:fontFamily="@font/learningcurve"/>
 
     </LinearLayout>
 </RelativeLayout>

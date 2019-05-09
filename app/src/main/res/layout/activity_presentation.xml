@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/smoky_black"
-        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:fontFamily="@font/learningcurve"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"

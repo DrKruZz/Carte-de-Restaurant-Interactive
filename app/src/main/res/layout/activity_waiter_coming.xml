@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WaiterComingActivity"
-    android:background="@color/lavender_gray">
+    android:background="@drawable/ardoise">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -20,11 +20,12 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/smoky_black"
-            android:fontFamily="@font/roboto_thin"
             android:gravity="center"
             android:text="@string/Nom"
             android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="45dp"
+            android:fontFamily="@font/learningcurve"/>
 
     </RelativeLayout>
 
@@ -50,12 +51,12 @@
             android:layout_height="404dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Un serveur va arriver d'une minute à l'autre"
-            android:textSize="55sp"
+            android:text="Un serveur va arriver \nd'une minute à l'autre"
+            android:textSize="60sp"
             android:enabled="false"
             android:focusable="false"
-            android:textColor="@color/deep_ruby"
-            android:fontFamily="@font/roboto_thin"/>
+            android:textColor="#ffffff"
+            android:fontFamily="@font/learningcurve"/>
     </RelativeLayout>
 
 

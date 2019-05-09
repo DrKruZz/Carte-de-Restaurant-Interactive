@@ -5,17 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MenuActivity"
-    android:background="@color/lavender_gray">
+    android:background="@drawable/ardoise">
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/smoky_black"
-        android:fontFamily="@font/roboto_thin"
         android:gravity="center"
         android:text="@string/Nom"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:fontFamily="@font/learningcurve"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -70,8 +71,9 @@
             android:layout_weight="1"
             android:text="Total : 0€"
             android:textColor="#ffff"
-            android:textSize="20sp"
-            android:gravity="bottom"/>
+            android:textSize="45sp"
+            android:gravity="bottom"
+            android:fontFamily="@font/learningcurve"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

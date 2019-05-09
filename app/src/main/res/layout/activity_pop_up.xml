@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PopUpActivity"
-    android:fontFamily="@font/learningcurve">
+    android:background="@drawable/ardoise">
 
     <TextView
         android:id="@+id/add_plat"
@@ -13,9 +13,10 @@
         android:layout_height="match_parent"
         android:text="TEST"
         android:gravity="center"
-        android:background="@color/deep_ruby"
+        android:background="@drawable/ardoise"
+        android:fontFamily="@font/learningcurve"
         android:textColor="#ffffff"
-        android:textSize="30sp"
+        android:textSize="60sp"
         android:textStyle="bold"/>
 
 </LinearLayout>

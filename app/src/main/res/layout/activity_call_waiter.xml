@@ -19,11 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/smoky_black"
-            android:fontFamily="@font/roboto_thin"
             android:gravity="center"
             android:text="@string/Nom"
             android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="45dp"
+            android:fontFamily="@font/learningcurve"/>
     </RelativeLayout>
 <!--
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -79,9 +80,9 @@
                 android:textAlignment="center"
                 android:id="@+id/textDialogYesNoMessage"
                 android:text="Souhaitez-vous appeler un serveur ?"
-                android:textSize="40dp"
-                android:textColor="#000000"
-                android:fontFamily="@font/roboto_thin"/>
+                android:textSize="60dp"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/learningcurve"/>
         </LinearLayout>
 
         <LinearLayout

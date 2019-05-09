@@ -18,7 +18,7 @@
         android:text="@string/Nom"
         android:textColor="#ffffff"
         android:textStyle="bold"
-
+        android:textSize="45dp"
         android:fontFamily="@font/learningcurve"/>
     <View
         android:layout_width="wrap_content"

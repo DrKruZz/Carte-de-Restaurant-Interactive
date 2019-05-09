@@ -19,9 +19,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/moins"/>
+            android:src="@drawable/moins"
+            android:backgroundTint="@color/thistle"/>
         <TextView
             android:fontFamily="@font/learningcurve"
+            android:textColor="#ffffff"
             android:id="@+id/count_panier"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,9 +35,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/plus"/>
+            android:src="@drawable/plus"
+            android:backgroundTint="@color/thistle"/>
         <TextView
             android:id="@+id/prix_panier"
+            android:textColor="#ffffff"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,5 +51,5 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/cross"/>
+            android:src="@drawable/cross" />
 </LinearLayout>
