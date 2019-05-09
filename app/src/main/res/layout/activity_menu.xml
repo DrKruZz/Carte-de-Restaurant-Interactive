@@ -35,50 +35,30 @@
             android:layout_height="fill_parent"
             android:background="@drawable/home"
             android:layout_weight="1"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="@drawable/search"
             android:onClick="search"
             android:layout_weight="1"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="@drawable/filter"
             android:layout_weight="1"
             android:onClick="filtre"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="@drawable/person"
             android:onClick="call"
             android:layout_weight="1"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:background="@drawable/panier"
             android:onClick="panier"
             android:layout_weight="1"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/black"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"

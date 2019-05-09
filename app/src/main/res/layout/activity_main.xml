@@ -12,5 +12,6 @@
         android:textSize="100sp"
         android:textStyle="bold"
         android:fontFamily="@font/moonflower"
+        android:background="@drawable/accueil"
         android:textColor="#ffffff"/>
 </LinearLayout>
