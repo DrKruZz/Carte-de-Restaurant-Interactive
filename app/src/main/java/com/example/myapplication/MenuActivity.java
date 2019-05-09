@@ -18,6 +18,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private List<List<String>> list = new ArrayList<>();
     private ArrayList<List<String>> panier = new ArrayList<>();
+    private int request_Code = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class MenuActivity extends AppCompatActivity {
                 Intent intent = new Intent(MenuActivity.this,Presentation.class);
                 intent.putExtra("name_item",selectedItem.get(0));
                 intent.putExtra("panier",panier);
-                startActivity(intent);
+                startActivityForResult(intent,request_Code);
             }
         });
     }
@@ -64,39 +65,47 @@ public class MenuActivity extends AppCompatActivity {
     public void cross(View Sender){
         panier.clear();
         Intent intent = new Intent(MenuActivity.this,MenuActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void call(View Sender){
         Intent intent = new Intent(MenuActivity.this,CallWaiter.class);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
     public void search(View Sender){
         Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
         intent.putExtra("panier",panier);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
     public void help(View Sender){
         Intent intent = new Intent(MenuActivity.this,Help.class);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void panier(View Sender){
         Intent intent = new Intent(MenuActivity.this,Panier.class);
         intent.putExtra("panier",panier);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void filtre(View Sender) {
         Intent intent = new Intent(MenuActivity.this,FiltreActivity.class);
         intent.putExtra("panier",panier);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
     }
 
     public void home(View view) {
         Intent intent = new Intent(MenuActivity.this, MenuActivity.class);
         intent.putExtra("panier", panier);
-        startActivity(intent);
+        startActivityForResult(intent,request_Code);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                this.panier = (ArrayList<List<String>>)data.getSerializableExtra("panier");
+            }
+        }
     }
 
     private class MyArrayAdapter extends ArrayAdapter<List<String>>{

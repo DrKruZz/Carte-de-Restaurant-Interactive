@@ -38,6 +38,14 @@ public class Panier extends AppCompatActivity {
         lv.getChildAt(lv.getFirstVisiblePosition());
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent data = new Intent();
+        data.putExtra("panier",panier);
+        setResult(RESULT_OK,data);
+        finish();
+    }
+
     public void home(View Sender){
         Intent intent = new Intent(Panier.this, MenuActivity.class);
         intent.putExtra("panier", panier);
